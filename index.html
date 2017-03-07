@@ -40,6 +40,18 @@
 </html>
 
 <script>
+app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+     // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.send(200);
+    }
+    else {
+      next();
+    }
+});
 	function getInput() {
 	    var elements = document.getElementById("frm1").elements;
     	var obj ={};
@@ -57,7 +69,7 @@
 
 	function httpGet(theUrl) {
 	    var xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	    xmlHttp.open( "GET", theUrl, true ); // false for synchronous request
 	    xmlHttp.send( null );
 	    return xmlHttp.responseText;
 	}
