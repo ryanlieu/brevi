@@ -50,9 +50,9 @@
     	var summarizeUrl = "http://newslyapp.herokuapp.com/" + "summarize/" + obj['length'] + "/" + obj["url"] + "/";
     	console.log(summarizeUrl);
     	var jsonText = httpGet(summarizeUrl);
-    	//var objText = JSON.parse(jsonText);
+    	var objText = JSON.parse(jsonText);
 
-    	document.getElementById("summarization").innerHTML = jsonText;
+    	document.getElementById("summarization").innerHTML = objText.summary;
 	}
 
 	function httpGet(theUrl) {
