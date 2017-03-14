@@ -33,6 +33,7 @@
 			</select>
 			  <input type="button" onclick="getInput()" value="Submit">
 			</form>
+			<h2 id="subHead"></h2>
 			<p id="summarization"></p>
 		</div>
 	</div>
@@ -54,7 +55,7 @@
     	var objText = JSON.parse(jsonText);
     	console.log(objText);
     	console.log(objText.summary);
-
+    	document.getElementById("subHead").innerHTML = objText.title;
     	document.getElementById("summarization").innerHTML = objText.summary;
 	}
 
