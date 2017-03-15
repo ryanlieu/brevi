@@ -15,7 +15,7 @@
 <body>
 	<div id="wrapper">
 		<div id="bodyText">
-			<form id="frm1" action="/action_page.php">
+			<form id="frm1">
 			  Article URL: <input type="text" name="url"><br>
 			  Summarized Text Length: 
 			  <select name="length">
@@ -47,20 +47,25 @@
      	   obj[item.name] = item.value;
     	}
     	var summarizeUrl = "http://newslyapp.herokuapp.com/" + "summarize/" + obj['length'] + "/" + obj["url"] + "/";
-    	console.log(summarizeUrl);
-    	var jsonText = httpGet(summarizeUrl);
-    	console.log(jsonText);
-    	var objText = JSON.parse(jsonText);
-    	console.log(objText);
-    	console.log(objText.summary);
-    	document.getElementById("subHead").innerHTML = objText.title;
+    	//console.log(summarizeUrl);
+    	httpGetAsync(summarizeUrl, updateSummmary);
+	}
+
+	function httpGetAsync(theUrl, callback)
+	{
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.onreadystatechange = function() { 
+	        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+	            callback(xmlHttp.responseText);
+	    }
+	    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+	    xmlHttp.send(null);
+	}
+
+	function updateSummmary(jsonText){
+		var objText = JSON.parse(jsonText);
+		document.getElementById("subHead").innerHTML = objText.title;
     	document.getElementById("summarization").innerHTML = objText.summary;
 	}
 
-	function httpGet(theUrl) {
-	    var xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-	    xmlHttp.send( null );
-	    return xmlHttp.responseText;
-	}
 </script>
