@@ -11,7 +11,7 @@ body{
 	border:0em;
 
 	background: -webkit-linear-gradient(45deg, #FD797C , #99D4FF); /* For Safari 5.1 to 6.0 */
-    background: linear-gradient(45deg,  #FD797C , #99D4FF)); /* Standard syntax */
+    background: linear-gradient(45deg,  #FD797C , #99D4FF); /* Standard syntax */
 }
 
 #bodyText{
