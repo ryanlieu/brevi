@@ -29,7 +29,8 @@ body{
 }
 
 #subHead{
-    font-weight:300;
+    padding-top: 3em;
+    font-weight:500;
     font-size: 1.2em;
 }
 
