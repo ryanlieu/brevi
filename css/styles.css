@@ -34,9 +34,14 @@ body{
 }
 
 #subHead{
+    text-align:left;
     padding-top: 3em;
     font-weight:500;
     font-size: 1.2em;
+}
+
+#summarization{
+    text-align:left;
 }
 
 .mouse:hover{
