@@ -28,6 +28,11 @@ body{
     padding-bottom:0;
 }
 
+#subTitleText{
+    font-weight:300;
+    font-size: 1.09em;
+}
+
 #subHead{
     padding-top: 3em;
     font-weight:500;
