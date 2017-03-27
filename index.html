@@ -69,7 +69,7 @@
 	function updateSummmary(jsonText){
 		var objText = JSON.parse(jsonText);
 		document.getElementById("subHead").innerHTML = objText.title;
-    	document.getElementById("summarization").innerHTML = objText.summary;
+    	document.getElementById("summarization").innerHTML = objText.summary.replace(/\n/g,"<br> <br>");
 	}
 
 </script>
