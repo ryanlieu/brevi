@@ -24,19 +24,7 @@
 			<h1 id="titleText">brevi</h1>
 			<p id="subTitleText">Your news, smarter. Inform your news browsing through article summarization that utilizes advanced natural language processing to extract only the most important information.</p>
 			<form id="frm1">
-			  Article URL: <input type="text" name="url"><br>
-			  Summarized Text Length: 
-			  <select name="length">
-				  <option>1</option>
-				  <option>2</option>
-				  <option>3</option>
-				  <option>4</option>
-				  <option>5</option>
-				  <option>6</option>
-				  <option>7</option>
-				  <option>8</option>
-				  <option>9</option>
-			</select>
+			  Article URL: <input type="text" name="url">
 			  <input type="button" onclick="getInput()" value="Submit">
 			</form>
 			<h2 id="subHead"></h2>
@@ -54,7 +42,7 @@
       	  var item = elements.item(i);
      	   obj[item.name] = item.value;
     	}
-    	var summarizeUrl = "http://newslyapp.herokuapp.com/" + "summarize/" + obj['length'] + "/" + obj["url"] + "/";
+    	var summarizeUrl = "http://newslyapp.herokuapp.com/" + "summarize/" + "3" + "/" + obj["url"] + "/";
     	//console.log(summarizeUrl);
     	httpGetAsync(summarizeUrl, updateSummmary);
 	}
