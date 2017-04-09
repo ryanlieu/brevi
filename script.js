@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 	   url = protocol + '//' + host;
 	   /*if($.inArray(url, allowed_sites) !== -1) {*/
 	   if(href.length > url.length + 3) {
-	       Tipped.create(this, "http://nicholasrub.in/mhacks/quink.php", {
+	       Tipped.create(this, "http://newslyapp.herokuapp.com/summarize/4/http://www.politico.com/story/2017/03/chuck-schumer-delay-neil-gorsuch-vote-236315/", {
 			   ajax: { data: {href: href}, type: 'post' },
 			   skin: "white",
 		       hook: 'rightmiddle',
